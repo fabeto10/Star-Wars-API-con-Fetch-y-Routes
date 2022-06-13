@@ -12,17 +12,17 @@ export const Card = () => {
         <div className="cards container-fluid">
             <div className="container people">
                 <h1>{'Characters'}</h1>
-                <div className="peopleCard">{store.people.map((item)=>{
+                <div className="peopleCard">{store.people && store.people.map((item)=>{
                     return(
-                        <CardPeople key={item.uid} item={item}/>
+                        <CardPeople key={item.uid} name={item.name} gender={item.gender}/>
                     )
                 })}</div>
             </div>
             <div className="container planets">
                 <h1>{'Planets'}</h1>
-                <div className="planetsCard">{store.planets.map((item)=>{
+                <div className="planetsCard">{store.planets && store.planets.map((item)=>{
                     return(
-                        <CardPlanets key={item.uid} item={item}/>
+                        <CardPlanets key={item.uid} terrain={item.terrain} name={item.name}/>
                     )
                 })}</div>
             </div>
