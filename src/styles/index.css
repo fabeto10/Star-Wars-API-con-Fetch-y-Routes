@@ -6,3 +6,21 @@
     height: 50px;
     margin-left: 20px;
 }
+.col1 {
+    background: grey;
+    width: 15%;
+}
+.col2 {
+    border: white;
+    background: grey;
+    width: 85%;
+}
+.row {
+    display: flex;
+    width: 100%;
+}
+.peopleCard{
+    display: block;
+    position: relative;
+    overflow: hidden;
+}

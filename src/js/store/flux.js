@@ -30,7 +30,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					`${API_URL}/planets/`
 				)
 				const body = await response.json()
-				console.log(response.status)
 				if(response.status !== 200){ 
 				alert("No pudimos cargar los personajes")
 				return;
@@ -41,7 +40,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 				)
 			} 	catch(error){
-				console.log(error)
 				alert("promesa rechazada, servidor caido")
 				}
 			}
