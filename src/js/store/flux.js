@@ -1,3 +1,5 @@
+import { useParams } from "react-router-dom"
+
 const API_URL = "https://www.swapi.tech/api/"
 
 const getState = ({ getStore, getActions, setStore }) => {

@@ -1,6 +1,5 @@
 import React from 'react'
 import Proptypes from 'prop-types'
-import { useParams } from 'react-router-dom'
 import { Link } from "react-router-dom";
 export const CardPeople = (props) => {
     return(

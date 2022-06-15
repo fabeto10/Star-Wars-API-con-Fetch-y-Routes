@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { useParams } from "react-router-dom";
 
 export const CardSinglePeople = (props) =>{
     return(
@@ -14,6 +15,7 @@ export const CardSinglePeople = (props) =>{
 }
 
 CardSinglePeople.proptypes ={
+    iD: PropTypes.string,
     hair_color: PropTypes.string,
 	skin_color: PropTypes.string,
 	eye_color: PropTypes.string,

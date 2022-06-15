@@ -16,7 +16,8 @@ export const Card = () => {
                     return(
                         <CardPeople className={"col"} key={item.uid} uid={item.uid} name={item.name} gender={item.gender}/>
                     )
-                })}</div>
+                })}
+                </div>
             </div>
             <div className="container planets">
                 <h1>{'Planets'}</h1>
