@@ -1,5 +1,3 @@
-import { useParams } from "react-router-dom"
-
 const API_URL = "https://www.swapi.tech/api"
 
 const getState = ({ getStore, getActions, setStore }) => {
@@ -10,7 +8,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			singlePerson: null
 		},
 		actions: {
-			getSinglePeople: async () => {
+			getSinglePeople: async (uid) => {
 				try {const response = await fetch(
 					`${API_URL}/people/${uid}`
 				)
@@ -19,9 +17,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 				alert("No pudimos cargar los personajes")
 				return;
 			}
+			console.log(body)
 				setStore({
 				singlePerson:
-					body.results
+					body.result
 				})
 			} 	catch(error){
 				alert("promesa rechazada, servidor caido");
