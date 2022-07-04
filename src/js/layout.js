@@ -6,7 +6,7 @@ import { CardSinglePeople } from "./component/CardSinglePeople";
 import { Navbar } from "./component/Navbar";
 import { Footer } from "./component/Footer";
 import { Card } from "./views/Card";
-import { CardSinglePlanet } from "./component/CardSinglePlanet";
+import { SinglePlanet } from "./views/SinglePlanet";
 import { SinglePeople } from "./views/SinglePeople";
 //create your first component
 const Layout = () => {
@@ -21,7 +21,7 @@ const Layout = () => {
 					<Routes>
 						<Route path="/" element={<Card/>} />
 						<Route path="/people/:uid" element={<SinglePeople />} />
-						{/* <Route path="/planet/:userId" element={<CardSinglePlanet/>}/> */}
+						<Route path="/planets/:uid" element={<SinglePlanet/>}/>
 						<Route path="*" element={<h1>Not found!</h1>}/>
 					</Routes>
 					<Footer />
