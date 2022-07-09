@@ -1,14 +1,22 @@
 const API_URL = "https://www.swapi.tech/api"
 
-const getState = ({ getStore, getActions, setStore }) => {
+const getState = ({ getStore, getActions, setStore}) => {
 	return {
 		store: {
+			label:"Prueba",
+			favorites: [],
 			planets:[],
 			people: [],
 			singlePerson: null,
 			singlePlanet: null
 		},
 		actions: {
+			addFavoriteElement: async(element)=>{
+				const store = getStore()
+				setStore({
+					favorites:[...store.favorites, element]
+				})
+			},
 			getSinglePeople: async (uid) => {
 				try {const response = await fetch(
 					`${API_URL}/people/${uid}`
