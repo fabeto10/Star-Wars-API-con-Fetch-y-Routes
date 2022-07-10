@@ -19,9 +19,9 @@ export const Card = () => {
                 })}
                 </div>
             </div>
-            <div className="container planets">
+            <div className="container people">
                 <h1>{'Planets'}</h1>
-                <div className="list-group">{store.planets && store.planets.map((item)=>{
+                <div className="row flex-nowrap overflow-scroll">{store.planets && store.planets.map((item)=>{
                     return(
                         <CardPlanets className={"list-group-item "} key={item.uid} uid={item.uid} terrain={item.terrain} name={item.name}/>
                     )

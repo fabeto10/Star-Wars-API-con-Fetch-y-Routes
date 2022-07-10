@@ -17,6 +17,9 @@ export const SinglePlanet = () => {
                                     uid={planetId.uid}  
                                     name={store.singlePlanet.properties.name}
                                     rotation_period={store.singlePlanet.properties.rotation_period}
+                                    orbital_period={store.singlePlanet.properties.rotation_period}
+                                    diameter={store.singlePlanet.properties.rotation_period}
+                                    climate={store.singlePlanet.properties.rotation_period}
                                     />
                                 }
             </>
