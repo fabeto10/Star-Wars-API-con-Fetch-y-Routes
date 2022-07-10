@@ -14,7 +14,7 @@ export const CardPeople = (props) => {
         return false
     }
     return(
-    <div className='container-fluid d-flex CardPeople'>
+    <div className='CardPeople col-3'>
         <div className="card" style={{width: "18rem"}}>
             <img className="card-img-top" src={`https://starwars-visualguide.com/assets/img/characters/${props.uid}.jpg`} alt="Card image cap"/>
             <div className="card-body">

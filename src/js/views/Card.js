@@ -12,7 +12,7 @@ export const Card = () => {
         <div className="cards container-fluid">
             <div className="container people">
                 <h1>{'Characters'}</h1>
-                <div className="d-flex row" >{store.people && store.people.map((item)=>{
+                <div className="row flex-nowrap overflow-scroll" >{store.people && store.people.map((item)=>{
                     return(
                         <CardPeople className={"col-3"} key={item.uid} uid={item.uid} name={item.name} gender={item.gender}/>
                     )
