@@ -13,8 +13,10 @@ export const SinglePlanet = () => {
             <>
                 {
                     store.singlePlanet && <CardSinglePlanet       
-                                    key = {store.singlePlanet.results.uid}
+                                    key = {store.singlePlanet.properties.uid}
                                     uid={planetId.uid}  
+                                    name={store.singlePlanet.properties.name}
+                                    rotation_period={store.singlePlanet.properties.rotation_period}
                                     />
                                 }
             </>

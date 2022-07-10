@@ -19,8 +19,12 @@
     display: flex;
     width: 100%;
 }
-.peopleCard{
-    display: block;
+/* ._card{
+    display: inline;
     position: relative;
     overflow: hidden;
 }
+
+div.inline { 
+    float:left; 
+} */ 

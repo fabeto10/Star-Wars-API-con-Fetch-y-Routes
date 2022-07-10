@@ -1,14 +1,20 @@
-import React from 'react'
+import React, { useState, useContext } from 'react'
 import Proptypes from 'prop-types'
 import { Link } from "react-router-dom";
+import { Context } from '../store/appContext';
+
 export const CardPlanets = (props) => {
+    const {store, actions} = useContext(Context)
+    const [isFavorite, setIsFavorite] = useState(false)
     return(
         <div className="card" style={{width: "18rem"}}>
             <img className="card-img-top" src={`https://starwars-visualguide.com/assets/img/planets/${props.uid}.jpg`} alt="Card image cap"/>
             <div className="card-body">
                 {props.name && <h5 className="card-title">{props.name}</h5>}
                 {props.terrain && <p className="card-text">{props.terrain}</p>}
-                <Link to={`/planets/${props.uid}`} className="btn btn-primary">{"DATA BANK"}</Link>{" "}<i style={{color: "red"}} className="fas fa-heart"></i>
+                <Link to={`/planets/${props.uid}`} className="btn btn-primary">{"DATA BANK"}</Link>{" "}
+                <i style={{color: "red"}} onClick={()=>{actions.addFavoriteElement(props.name); setIsFavorite(!isFavorite)}} 
+                className={`fas ${(isFavorite) ? "fa-heart" : "fa-heart-circle-plus"}`}></i>
             </div>
         </div>
     )

@@ -1,9 +1,10 @@
+import { element } from "prop-types"
+
 const API_URL = "https://www.swapi.tech/api"
 
 const getState = ({ getStore, getActions, setStore}) => {
 	return {
 		store: {
-			label:"Prueba",
 			favorites: [],
 			planets:[],
 			people: [],
@@ -13,9 +14,19 @@ const getState = ({ getStore, getActions, setStore}) => {
 		actions: {
 			addFavoriteElement: async(element)=>{
 				const store = getStore()
-				setStore({
-					favorites:[...store.favorites, element]
-				})
+				const search = store.favorites.find((x)=> x == element)
+				console.log(search, element)
+				if(search == undefined){
+					setStore({
+						favorites:[...store.favorites, element]
+					})
+				}
+			},
+			deleteFavoriteElement: async(element)=>{
+				const store = getStore()
+					setStore({
+						favorites:[...store.favorites].filter((x)=> x != element)
+					})
 			},
 			getSinglePeople: async (uid) => {
 				try {const response = await fetch(
@@ -41,16 +52,16 @@ const getState = ({ getStore, getActions, setStore}) => {
 				)
 				const body = await response.json()
 				if(response.status !== 200){ 
-				alert("No pudimos cargar los personajes")
+				alert("No pudimos cargar los planetas")
 				return;
 			}
 			console.log(body)
 				setStore({
-				singlePlanet:
-					body.result
+					singlePlanet:
+						body.result
 				})
 			} 	catch(error){
-				alert("promesa rechazada, servidor caido");
+					alert("promesa rechazada, servidor caido");
 				}
 			},
 			getPlanets: async () => {
