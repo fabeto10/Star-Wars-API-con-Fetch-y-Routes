@@ -18,7 +18,7 @@ export const CardSinglePlanet = (props) =>{
                 <h5 className="card-title">{props.name}</h5>
                 <p className="card-text">{`-Rotation Period: ${props.rotation_period} -Orbital Period: ${props.orbital_period}`}</p>
                 <p>{`-Diameter: ${props.diameter} -Climate: ${props.climate}`}</p>
-                <i style={{color: "red"}} onClick={()=>{actions.addFavoriteElement(props.name); /* setIsFavorite(!isFavorite)*/}} 
+                <i style={{color: "red", position:"relative", marginLeft:"-2px", fontSize:"40px"}} onClick={()=>{actions.addFavoriteElement(props.name); /* setIsFavorite(!isFavorite)*/}} 
                 className={`fas ${(isFavorite(props.name)) ? "fa-heart" : "fa-heart-circle-plus"}`}></i>
             </div>
         </div>

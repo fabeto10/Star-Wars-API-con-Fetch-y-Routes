@@ -21,7 +21,7 @@ export const CardPeople = (props) => {
                 {props.name && <h5 className="card-title">{props.name}</h5>}
                 {props.gender && <p className="card-text">{props.gender}</p>}
                 <Link to={`/people/${props.uid}`} className="btn btn-primary">{"DATA BANK"}</Link>{" "}
-                <i style={{color: "red"}} onClick={()=>{actions.addFavoriteElement(props.name); /* setIsFavorite(!isFavorite)*/}} 
+                <i style={{color: "red", position:"relative", marginLeft:"70px", fontSize:"40px"}} onClick={()=>{actions.addFavoriteElement(props.name); /* setIsFavorite(!isFavorite)*/}} 
                 className={`fas ${(isFavorite(props.name)) ? "fa-heart" : "fa-heart-circle-plus"}`}></i>
             </div>
         </div>

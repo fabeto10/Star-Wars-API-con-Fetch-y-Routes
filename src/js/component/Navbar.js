@@ -9,12 +9,12 @@ export const Navbar = () => {
 			<Link to="/">
 				<img className="logo" src="https://1000marcas.net/wp-content/uploads/2019/12/Star-Wars-logo-tm.jpg"/>
 			</Link>
-			<div className="ml-auto mr-3">
+			<div className="mr-3 pe-4">
 				<div className="dropdown mr-3">
 				<button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					Favorite Adds
 				</button>
-					<div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					<div className="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
 						{store.favorites.map((fav, index)=>{return(<div className="dropdown-item" key={index}>{fav+" "}<i className="fa fa-trash" onClick={()=>actions.deleteFavoriteElement(fav)} aria-hidden="true"></i></div>)})}
 					</div>
 				</div>

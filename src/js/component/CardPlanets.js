@@ -19,8 +19,8 @@ export const CardPlanets = (props) => {
             <div className="card-body">
                 {props.name && <h5 className="card-title">{props.name}</h5>}
                 {props.terrain && <p className="card-text">{props.terrain}</p>}
-                <Link to={`/planets/${props.uid}`} className="btn btn-primary">{"DATA BANK"}</Link>{" "}
-                <i style={{color: "red"}} onClick={()=>{actions.addFavoriteElement(props.name); /* setIsFavorite(!isFavorite)*/}} 
+                <Link to={`/planets/${props.uid}`} className="btn btn-primary">{"DATA BANK"}</Link>{"  "}
+                <i style={{color: "red", position:"relative", marginLeft:"70px", fontSize:"40px"}} onClick={()=>{actions.addFavoriteElement(props.name); /* setIsFavorite(!isFavorite)*/}}
                 className={`fas ${(isFavorite(props.name)) ? "fa-heart" : "fa-heart-circle-plus"}`}></i>
             </div>
         </div>
